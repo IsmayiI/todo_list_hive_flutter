@@ -47,6 +47,12 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
+  void deleteTask(int index) {
+    setState(() {
+      todoList.removeAt(index);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -69,6 +75,7 @@ class _HomePageState extends State<HomePage> {
           child: TodoTile(
             todo: todoList[index],
             onChanged: toggleTodo,
+            onDelete: (context) => deleteTask(index),
           ),
         ),
       ),
