@@ -4,7 +4,7 @@ import 'package:todo_hive_app/models/models.dart';
 
 class TodoTile extends StatelessWidget {
   final Todo todo;
-  final VoidCallback onChanged;
+  final void Function(Todo) onChanged;
 
   const TodoTile({
     super.key,
@@ -24,7 +24,7 @@ class TodoTile extends StatelessWidget {
       leading: Checkbox(
         activeColor: Colors.black,
         value: todo.isDone,
-        onChanged: (_) => onChanged(),
+        onChanged: (_) => onChanged(todo),
       ),
 
       // text
@@ -36,7 +36,7 @@ class TodoTile extends StatelessWidget {
       ),
 
       // function
-      onTap: onChanged,
+      onTap: () => onChanged(todo),
     );
   }
 }

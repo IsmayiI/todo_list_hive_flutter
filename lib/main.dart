@@ -18,6 +18,9 @@ class MainApp extends StatelessWidget {
           backgroundColor: Colors.yellow,
           centerTitle: true,
         ),
+        floatingActionButtonTheme: FloatingActionButtonThemeData(
+          backgroundColor: Colors.yellow,
+        ),
         scaffoldBackgroundColor: Colors.yellow[200],
       ),
       home: HomePage(),
